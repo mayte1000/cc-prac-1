@@ -16,7 +16,6 @@ form {
 
 .navbar-nav li:hover {
   background-color: #0dcaf0;
-  border-radius: 10px;
 }
 
 /* Estilo para el texto de los elementos del navbar en hover */
@@ -56,26 +55,6 @@ form {
   margin-left: 90px;
 }
 
-.contenedor-carrusel {
-  display: grid;
-  grid-template-columns: repeat(9, minmax(0, 1fr));
-  gap: 1em;
-  margin-right: 90px;
-  margin-left: 90px;
-}
-.contenedor-carrusel img {
-  height: 500px;
-}
-
-.carrusel1 {
-  grid-column: span 3;
-}
-.carrusel2 {
-  grid-column: span 3;
-}
-.carrusel3 {
-  grid-column: span 3;
-}
 
 /* Seccion main */
 .titulo {
