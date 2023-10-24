@@ -1,0 +1,57 @@
+* {
+    box-sizing: border-box;
+}
+
+.flex-panel-ventas {
+    display: flex;
+    flex-direction: row;
+    font-size: 30px;
+    text-align: center;
+}
+
+.flex-panel-productos {
+    background-color: #bffff7;
+    padding: 10px;
+    flex: 80%;
+    
+}
+
+.flex-panel-carrito {
+    background-color: dodgerblue;
+    padding: 10px;
+    flex: 20%;
+}
+
+.panel-producto {    
+    flex: 0 0 200px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+    background-color: white;
+    max-width: 15%;
+    font-size: 15px;
+}
+
+.panel-producto img {
+    max-width: 100%;
+}
+
+.panel-producto .text {
+    padding: 0 20px 20px;
+}
+
+.panel-producto .text>button {
+    background: gray;
+    border: 0;
+    color: white;
+    padding: 10px;
+    width: 100%;
+}
+
+
+/* Responsive layout - makes a one column-layout instead of two-column layout */
+@media (max-width: 800px) {
+    .flex-container {
+        flex-direction: row;
+    }
+}

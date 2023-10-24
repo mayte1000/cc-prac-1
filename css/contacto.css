@@ -1,0 +1,82 @@
+/*style para cel*/
+@media (max-width: 767px) {
+    .contenedor {
+      grid-template-columns: 1fr;
+    }
+  }
+  /* Stile para tablet */
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .contenedor {
+      grid-template-columns: repeat(2, 1fr); /* Mostrar dos columnas */
+    }
+  }
+  
+  /* Estilos para escritorio */
+  @media screen and (min-width: 1024px) {
+    .contenedor {
+      grid-template-columns: repeat(4, 1fr); /* Mostrar tres columnas */
+    }
+  }
+  
+  /* Seccion footer */
+  footer {
+    background-color: #9bdeec;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .logo,
+  .social,
+  .contact {
+    text-align: center;
+    color: rgb(6, 6, 6);
+  }
+  
+  .logo img {
+    max-width: 100%;
+  }
+  
+  .social img,
+  .contact img {
+    max-width: 3%;
+  }
+  
+  /* Estilos para celular */
+  @media screen and (max-width: 767px) {
+    .footer-grid {
+      grid-template-columns: 1fr; /* Mostrar una columna */
+    }
+    footer {
+      position: absolute;
+      top: 7000px;
+    }
+  }
+  
+  /* Estilos para tablet */
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .footer-grid {
+      grid-template-columns: repeat(2, 1fr); /* Mostrar dos columnas */
+    }
+    footer {
+      position: absolute;
+      top: 2700px;
+    }
+  }
+  
+  /* Estilos para escritorio */
+  @media screen and (min-width: 1024px) {
+    .footer-grid {
+      grid-template-columns: repeat(3, 1fr); /* Mostrar tres columnas */
+    }
+    footer {
+      position: absolute;
+      top: 1250px;
+    }
+  }
+  
