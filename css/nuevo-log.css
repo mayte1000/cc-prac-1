@@ -22,15 +22,10 @@
   }
   
 .principal{
-  border: 100px;;
   text-align: center;
-  border-radius: 3px;
-  background-color: #a5dbdd;
   padding: 10px;
   margin: 0 auto;
   width: 350px;
-  color: grey;
-  box-shadow: 0px 0px 8px grey;
   display: flex;
   flex-direction: column; 
   top: 0.5px;
