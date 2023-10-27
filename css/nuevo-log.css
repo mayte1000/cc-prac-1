@@ -22,9 +22,11 @@
   }
   
 .principal{
-  border: 100px;;
   text-align: center;
+<<<<<<< HEAD
   border-radius: 3px;
+=======
+>>>>>>> main
   padding: 10px;
   margin: 0 auto;
   width: 350px;
