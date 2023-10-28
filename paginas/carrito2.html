@@ -1,87 +1,291 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link 
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" 
-        rel="stylesheet" 
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" 
-        crossorigin="anonymous">
-    <title>Carrito de compras</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="keywords" content="tienda de accesorios, accesorios para mascotas" />
+  <meta name="description"
+    content="Descubre una amplia selección de accesorios para tu mascota, en nuestra tienda en línea." />
+  <meta name="author"
+    content="Maria Celeste Quiroga H, Maria Celeste Verduz, Facundo Di Pompo, Marta Vargas, Remigio Guerrero" />
+
+  <title>Casa Campo</title>
+  <!-- link CSS -->
+  <link rel="stylesheet" href="../css/carrito.css" />
+  <!-- link Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+ 
 </head>
+
 <body>
-    <div class="container">
-        <h1>Carrito de compras</h1>
-        <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Item</th>
-                <th scope="col">Cantidad</th>
-                <th scope="col">Acción</th>
-                <th scope="col">Total</th>
-              </tr>
-            </thead>
-            <tbody id="items"></tbody>
-            <tfoot>
-              <tr id="footer">
-                <th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>
-              </tr> 
-            </tfoot>
-          </table>
-        <div class="row" id="cards"></div>
+  <header>
+  <!-- Seccion navbar -->
+  <nav class="navbar navbar-light navbar-expand-lg fixed-top" style="background-color: #e3f2fd">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="../paginas/index.html"><img src="../img/logo.jpeg" alt="Soy un logo" height="120"
+          class="logo" /></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="../paginas/index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../paginas/alimentos.html">Alimentos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../paginas/acerca-de-nosotros.html">Acerca de nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../paginas/contacto.html">Contacto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../paginas/carrito2.html">Carrito</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Mi cuenta
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="../paginas/login.html">Iniciar sesión</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="../paginas/registro.html">Resgistrarse</a>
+              </li>
+      </div>
     </div>
+  </nav>
+</header>
+<br><br><br><br><br><br><br><br><br>
+  
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
 
-    <template id="template-footer">
-        <th scope="row" colspan="2">Total productos</th>
-        <td>10</td>
-        <td>
-            <button class="btn btn-danger btn-sm" id="vaciar-carrito">
-                vaciar 
-                todo
-            </button>
-        </td>
-        <td class="font-weight-bold">$ <span>5000</span></td>
-    </template>
+    const dbProductos = [
+      {
+        id: 1,
+        nombre: 'Bolsa de 3Kg',
+        precio: 25000,
+        imagen:'../img/purina-proplan.jpg'
+      },
+      {
+        id: 3,
+        nombre: 'Bandana para gatos',
+        precio: 7000,
+        imagen: '../img/prod3.jpg'
+      },
+      {
+        id: 2,
+        nombre: 'Alimento para Gatos',
+        precio: 35580,
+        imagen: '../img/balanced.jpg'
+      },
+    ];
 
-    <template id="template-carrito">
-        <tr>
-          <th scope="row">id</th>
-          <td>Café</td>
-          <td>1</td>
-          <td>
-              <button class="btn btn-info btn-sm">
-                  +
-              </button>
-              <button class="btn btn-danger btn-sm">
-                  -
-              </button>
-          </td>
-          <td>$ <span>500</span></td>
-        </tr>
-      </template>
+    let carrito = [];
+    const DOMitems = document.querySelector('#items');
+    const panelCarrito = document.querySelector('#carrito');
+    const txtTotalCompra = document.querySelector('#total');
+    const btnVaciarCarrito = document.querySelector('#boton-vaciar');
+    const btnPagar = document.querySelector('#boton-pagar');
 
-    <template id="template-card">
-        <div class="col-12 mb-2 col-md-4">
-            <div class="card">
-                <img 
-                src="" 
-                alt="producto" 
-                class="card-img-top" >
-            <div class="card-body">
-                <h5>Titulo</h5>
-                <p>Precio $ </p>
-                <button 
-                    class="btn btn-dark">
-                    Comprar
-                </button>
-            </div>
-          </div>
-        </div>
-    </template>
-    
-    <script src="./app.js"></script>
+
+    function dibujarListaProductos() {
+      dbProductos.forEach((producto) => {
+
+        const panelProducto = document.createElement('div');
+        panelProducto.classList.add('card', 'col-sm-4');
+
+        const cuerpoPanelProducto = document.createElement('div');
+        cuerpoPanelProducto.classList.add('card-body');
+
+        const txtNombre = document.createElement('h5');
+        txtNombre.classList.add('card-title');
+        txtNombre.textContent = producto.nombre;
+
+        const imgFoto = document.createElement('img');
+        imgFoto.classList.add('img-fluid');
+        imgFoto.setAttribute('src', producto.imagen);
+
+        const txtPrecio = document.createElement('p');
+        txtPrecio.classList.add('card-text');
+        txtPrecio.textContent = `$${producto.precio}`;
+
+        const btnAgregar = document.createElement('button');
+        btnAgregar.classList.add('btn', 'btn-primary');
+        btnAgregar.textContent = '+';
+        btnAgregar.setAttribute('marcador', producto.id);
+        btnAgregar.addEventListener('click', agregarProductoAlCarrito);
+
+        cuerpoPanelProducto.appendChild(imgFoto);
+        cuerpoPanelProducto.appendChild(txtNombre);
+        cuerpoPanelProducto.appendChild(txtPrecio);
+        cuerpoPanelProducto.appendChild(btnAgregar);
+
+        panelProducto.appendChild(cuerpoPanelProducto);
+        items.appendChild(panelProducto);
+      });
+    }
+
+    function agregarProductoAlCarrito(evento) {
+      carrito.push(evento.target.getAttribute('marcador'))
+      dibujarListaCarrito();
+    }
+
+    function dibujarListaCarrito() {
+      panelCarrito.textContent = '';
+
+      const carritoSinDuplicados = [...new Set(carrito)];
+
+      carritoSinDuplicados.forEach((item) => {
+        const producto = dbProductos.filter((itemBaseDatos) => {
+          return itemBaseDatos.id === parseInt(item);
+        });
+
+        const numeroUnidadesItem = carrito.reduce((total, itemId) => {
+          return itemId === item ? total += 1 : total;
+        }, 0);
+
+        const panelProductos = document.createElement('li');
+        panelProductos.classList.add('list-group-item', 'text-right', 'mx-2');
+
+        const txtCantidad = document.createElement('p');
+        txtCantidad.textContent = ` ${numeroUnidadesItem}`;
+
+        const txtNombre = document.createElement('p');
+        txtNombre.textContent = ` ${producto[0].nombre}`;
+
+        const txtPrecio = document.createElement('p');
+        txtPrecio.textContent = `$${producto[0].precio}`;
+
+        const imgFoto = document.createElement('img');
+        imgFoto.classList.add('img-fluid');
+        imgFoto.setAttribute('src', producto[0].imagen);
+        imgFoto.style.width = "50px";
+        imgFoto.style.height = "50px";
+
+        const btnSacarItem = document.createElement('button');
+        btnSacarItem.classList.add('btn', 'btn-danger', 'mx-5');
+        btnSacarItem.textContent = 'X';
+        btnSacarItem.style.marginLeft = '1rem';
+        btnSacarItem.dataset.item = item;
+        btnSacarItem.addEventListener('click', sacarItemCarrito);
+
+        panelProductos.appendChild(imgFoto);
+        panelProductos.appendChild(txtNombre);
+        panelProductos.appendChild(txtCantidad);
+        panelProductos.appendChild(txtPrecio);
+        panelProductos.appendChild(btnSacarItem);
+        panelCarrito.appendChild(panelProductos);
+      });
+
+      txtTotalCompra.textContent = calcularTotal();
+    }
+
+    function sacarItemCarrito(evento) {
+      const id = evento.target.dataset.item;
+
+      carrito = carrito.filter((carritoId) => {
+        return carritoId !== id;
+      });
+
+      dibujarListaCarrito();
+    }
+
+    function calcularTotal() {
+      return carrito.reduce((total, item) => {
+        const miItem = dbProductos.filter((itemBaseDatos) => {
+          return itemBaseDatos.id === parseInt(item);
+        });
+
+        return total + miItem[0].precio;
+      }, 0).toFixed(2);
+    }
+
+    function vaciarCarrito() {
+      if (carrito.length == 0) {
+        alert("No hay productos en la lista");
+        return;
+      }
+
+      carrito = [];
+      dibujarListaCarrito();
+    }
+
+    function pagar() {
+      if (carrito.length == 0) {
+        alert("No hay productos en la lista");
+        return;
+      }
+
+    }
+
+    btnVaciarCarrito.addEventListener('click', vaciarCarrito);
+    btnPagar.addEventListener('click', pagar);
+
+    dibujarListaProductos();
+    dibujarListaCarrito();
+  });
+</script>
+
+    <main id="items" class="col-sm-8 row">
+      
+      <div class="flex-container"></div>
+      <div class="flex-item-left">
+        <h2>Productos</h2>
+      </div>
+      <div class="flex-item-right">
+        <h2>Carrito</h2>
+        
+      </div>
+
+      
+      <ul id="carrito" class="list-group"></ul>
+      <hr>
+      <p class="text-right">Total: $<span id="total"></span></p>
+      <button id="boton-vaciar" class="btn btn-danger">Vaciar</button>
+      <button id="boton-pagar" class="btn btn-success btn-block">Pagar</button>
+
+  </div>
+
+  </main>
+
+  <!-- Seccion footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="logo">
+        <img src="../img/logo.jpeg" style="max-width: 20%" alt="Soy el Logo" />
+        <p>CASA CAMPO</p>
+      </div>
+      <div class="social">
+        <h5>Buscanos en Nuestras Redes Sociales</h5>
+        <p>
+          <img src="../img/facebook.jpg" style="max-width: 3%" alt="Logo facebook" /> <a
+            href="https://m.facebook.com/groups/863675708693839/?paipv=0&eav=AfY00-9UhOoAMMV57eZOBmC4HNAlGcYw3Nl7Tj2DDkxXhXKyOoERrkYLqFoAfSnWyPw">@casa
+            campo</a>
+        </p>
+        <p>
+          <img src="../img/ig.png" style="max-width: 3%" alt="Logo Instagram" />casa-campo
+        </p><br><br>
+        <p>Copyright © 2023</p>
+      </div>
+      <div class="contact">
+        <h5>Contacto</h5>
+        <p>Av. Landajo 350 - Depto Cruz Alta</p>
+        <p>Provincia Tucumán</p>
+        <p>Tel.: 3814922047 - 3814138041</p>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>
