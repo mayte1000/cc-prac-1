@@ -48,6 +48,11 @@ form {
   color: black;
 }
 
+.subtitulo{
+  text-align: center;
+  color: #013a45;
+}
+
 .p {
   color: black;
 }
@@ -62,19 +67,6 @@ form {
   gap: 1em;
   margin-right: 90px;
   margin-left: 90px;
-}
-.contenedor-carrusel img {
-  height: 500px;
-}
-
-.carrusel1 {
-  grid-column: span 3;
-}
-.carrusel2 {
-  grid-column: span 3;
-}
-.carrusel3 {
-  grid-column: span 3;
 }
 
 /* Seccion main */
