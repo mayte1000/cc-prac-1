@@ -1,0 +1,118 @@
+* {
+    box-sizing: border-box;
+    flex:none;
+}
+
+.flex-panel-ventas {
+    display: flex;
+    flex-direction: row;
+    font-size: 30px;
+    text-align: center;
+}
+
+.flex-panel-productos {
+    background-color: #bffff7;
+    padding: 10px;
+    flex: 80%;   
+}
+
+.flex-panel-carrito {
+    background-color: dodgerblue;
+    padding: 10px;
+    flex: 20%;
+}
+
+.panel-producto {    
+    flex: 0 0 200px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+    background-color: white;
+    max-width: 15%;
+    font-size: 15px;
+  }
+
+.panel-producto img {
+    max-width: 50%;
+}
+
+.panel-producto .text {
+    padding: 0 20px 20px;
+}
+
+.panel-producto .text>button {
+    background: rgb(221, 167, 167);
+    border: 0;
+    color: white;
+    padding: 10px;
+    width: 100%;
+}
+
+/* Responsive layout - makes a one column-layout instead of two-column layout */
+@media (max-width: 800px) {
+    .flex-container {
+        flex-direction: row;
+    }
+}
+
+  /* Seccion footer */
+  footer {
+    background-color: #9bdeec;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(, 1fr);
+    gap: 20px;
+  }
+  
+  .logo,
+  .social,
+  .contact {
+    text-align: center;
+    color: rgb(6, 6, 6);
+  }
+  
+  .logo img {
+    max-width: 100%;
+  }
+  
+  .social img,
+  .contact img {
+    max-width: 3%;
+  }
+   
+/* Estilos para celular */
+  @media screen and (max-width: 767px) {
+    .footer-grid {
+      grid-template-columns: 1fr; /* Mostrar una columna */
+    }
+    footer {
+      position: absolute;
+      top: 7000px;
+    }
+  }
+  
+  /* Estilos para tablet */
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .footer-grid {
+      grid-template-columns: repeat(2, 1fr); /* Mostrar dos columnas */
+    }
+    footer {
+      position: absolute;
+      top: 2700px;
+    }
+  }
+  
+  /* Estilos para escritorio */
+  @media screen and (min-width: 1024px) {
+    .footer-grid {
+      grid-template-columns: repeat(3, 1fr); /* Mostrar tres columnas */
+    }
+    footer {
+      position: absolute;
+      top: 1250px;
+    }
+  }
