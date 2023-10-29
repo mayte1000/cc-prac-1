@@ -14,19 +14,28 @@
   form {
     width: 300px;
   }
-  input {
-  }
+
   .navbar-nav li:hover {
     background-color: #0dcaf0;
     border-radius: 10px;
   }
-  
+
+  .label{
+    display: block;
+    float: left;
+    width: 70px;
+    color: #0b0b0b;
+    align-items: center;
+    text-align: center;
+}
+.hh{
+  color: #060606;
+  display: block;
+  flex: none;
+}
 .principal{
   text-align: center;
-<<<<<<< HEAD
   border-radius: 3px;
-=======
->>>>>>> main
   padding: 10px;
   margin: 0 auto;
   width: 350px;

@@ -1,0 +1,209 @@
+/* Seccion navbar */
+/* Seccion navbar */
+/* Seccion navbar */
+.logo {
+  border-radius: 20%;
+}
+main,
+footer {
+  position: relative;
+  top: 155px;
+}
+main {
+  margin-bottom: 20px;
+}
+form {
+  width: 300px;
+}
+input {
+}
+.navbar-nav li:hover {
+  background-color: #0dcaf0;
+  border-radius: 10px;
+}
+
+/* Estilo para el texto de los elementos del navbar en hover */
+.navbar-nav li:hover a {
+  color: #030303;
+}
+
+
+form {
+  width: 100%;
+  text-align: center;
+ text-decoration: none;
+ object-position: 50%;
+}
+
+section{
+  display: flex;
+  flex-wrap: wrap
+  align-items: center;
+  justify-content:center;
+  flex-direction:column;
+  padding: 1em;
+}
+
+/* Seccion main */
+/* Imagen-principal */
+
+
+footer {
+  position: absolute;
+  top: 600px;
+  width: 100%;
+}
+/* Seccion main */
+
+*{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+.principal{
+  width: 10%;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+.button{
+  padding: 5px 20px;
+  margin-top: 20;
+  font-size: 12px;
+  cursor: pointer;
+  outline: none;
+  display: block;
+  margin-top: 10px;
+  justify-items: center;
+  font-family: 'Tahoma';
+}
+
+
+input{
+  display: inline-grid;
+  width: 2%;
+  height: 1px;
+  padding: 15px;
+  margin: 15px;
+}
+
+.titulos{
+  text-align: center;
+  color: #0dcaf0;
+}
+
+/*style para cel*/
+@media screen and (max-width: 607px) {
+  .tabla {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Seccion footer */
+footer {
+  background-color: #9bdeec;
+  padding: 20px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.logo,
+.social,
+.contact {
+  text-align: center;
+  color: rgb(10, 10, 10);
+}
+
+.logo img {
+  max-width: 100%;
+}
+
+.social img,
+.contact img {
+  max-width: 3%;
+}
+
+/* Estilos para celular */
+@media screen and (max-width: 767px) {
+  .footer-grid {
+    grid-template-columns: 1fr; /* Mostrar una columna */
+  }
+  footer {
+    position: relative;
+    top: 1500px;
+    width: 100%;
+  }
+}
+
+/* Estilos para tablet */
+@media screen and (min-width: 608px) and (max-width: 1023px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr); /* Mostrar dos columnas */
+  }
+  footer {
+    position: relative;
+    top: 200px;
+    width: 100%;
+  }
+}
+
+/* Estilos para escritorio */
+@media screen and (min-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: repeat(3, 1fr); /* Mostrar tres columnas */
+  }
+  footer {
+    position: relative;
+    top: 1500px;
+    width: 100%;
+  }
+}
+
+/*no usar
+.h2 {
+  color: rgb(18, 17, 17);
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+}
+*/
+
+
+
+form {
+  max-width: 50%;
+  height: 300px;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;  
+}
+/*
+#input {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  display: block;
+  margin: 5px;
+  border: 1px;
+}
+
+button {
+  margin-top: 10px;
+  width: 100%;
+  height: 30px;
+  border-radius: 4px;
+  border: none;
+  background: #a4eee9;
+  display: block;
+  cursor: pointer;
+  transition: all ease 0.5s;
+}
+.errorField {
+  border: 1px solid red;
+}
+*/
