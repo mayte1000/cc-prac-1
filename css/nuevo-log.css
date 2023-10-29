@@ -20,13 +20,21 @@
     background-color: #0dcaf0;
     border-radius: 10px;
   }
-  
+
+  .label{
+    display: block;
+    float: left;
+    width: 70px;
+    color: #0dcaf0;
+}
+.hh{
+  color: #0dcaf0;
+  display: block;
+  flex: none;
+}
 .principal{
   text-align: center;
-<<<<<<< HEAD
   border-radius: 3px;
-=======
->>>>>>> main
   padding: 10px;
   margin: 0 auto;
   width: 350px;
