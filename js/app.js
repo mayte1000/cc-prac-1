@@ -19,18 +19,16 @@
 
 var nombre = document.getElementById('nombre');
 var password = document.getElementById('password');
+var email = document.getElementById('email');
 var error = document.getElementById('error');
 error.style.color = 'red';
 
 function enviarFormulario(){
-  console.log('Enviando Formulario...');
+  console.log('Enviando email...');
 
 var mensajesError = [];
-if (nombre.value === null || nombre.value === ""){
-  mensajesError.push('Ingresa tu nombre');
-}
-if (password.value === null || password.value === ''){
-  mensajesError.push('Ingresa tu password');
+if (email.value === null || email.value === ""){
+  mensajesError.push('Ingresa tu email');
 }
 
 error.innerHTML = mensajesError.join(' , ');

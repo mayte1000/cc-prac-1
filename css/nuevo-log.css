@@ -14,8 +14,7 @@
   form {
     width: 300px;
   }
-  input {
-  }
+
   .navbar-nav li:hover {
     background-color: #0dcaf0;
     border-radius: 10px;
@@ -25,10 +24,12 @@
     display: block;
     float: left;
     width: 70px;
-    color: #0dcaf0;
+    color: #0b0b0b;
+    align-items: center;
+    text-align: center;
 }
 .hh{
-  color: #0dcaf0;
+  color: #060606;
   display: block;
   flex: none;
 }

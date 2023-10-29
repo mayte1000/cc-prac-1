@@ -117,7 +117,7 @@ input{
 }
 
 /*style para cel*/
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 607px) {
   .tabla {
     grid-template-columns: 1fr;
   }
@@ -157,20 +157,20 @@ footer {
     grid-template-columns: 1fr; /* Mostrar una columna */
   }
   footer {
-    position: absolute;
+    position: relative;
     top: 1500px;
     width: 100%;
   }
 }
 
 /* Estilos para tablet */
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@media screen and (min-width: 608px) and (max-width: 1023px) {
   .footer-grid {
     grid-template-columns: repeat(2, 1fr); /* Mostrar dos columnas */
   }
   footer {
-    position: absolute;
-    top: 400px;
+    position: relative;
+    top: 200px;
     width: 100%;
   }
 }
@@ -182,7 +182,7 @@ footer {
   }
   footer {
     position: relative;
-    top: 200px;
+    top: 1500px;
     width: 100%;
   }
 }
