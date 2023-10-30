@@ -1,21 +1,18 @@
 function validarForm() {
 
-    var textNombre = document.getElementById('textnombre');
-    if (textNombre.value == "") {
+    if (document.getElementById('textnombre').value == "") {
         alert('Ingrese un nombre de contacto');
         return false;
     }
 
-    var textEmail = document.getElementById('textemail');
     var patronValidoMail = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
 
-    if (!patronValidoMail.test(textEmail.value)) {
+    if (!patronValidoMail.test(document.getElementById('textemail').value)) {
         alert('Ingrese una dirección de correo válida');
         return false;
     }
 
-    var textComentario = document.getElementById('textcomentario');
-    if (textComentario.value == "") {
+    if (document.getElementById('textcomentario').value == "") {
         alert('Ingrese una consulta o comentario');
         return false;
     }
