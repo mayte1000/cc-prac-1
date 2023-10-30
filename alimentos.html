@@ -12,7 +12,7 @@
 
   <title>Casa Campo</title>
   <!-- link CSS -->
-  <link rel="stylesheet" href="../css/nuevo-log.css" />
+  <link rel="stylesheet" href="../css/galeria.css" />
   <!-- link Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
@@ -22,7 +22,7 @@
   <!-- Seccion navbar -->
   <nav class="navbar navbar-light navbar-expand-lg fixed-top" style="background-color: #e3f2fd">
     <div class="container-fluid">
-      <a class="navbar-brand" href="../paginas/index.html"><img src="../img/logo.jpeg " alt="Soy un logo" height="120"
+      <a class="navbar-brand" href="index.html"><img src="../img/logo.jpeg" alt="Soy un logo" height="120"
           class="logo" /></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,19 +31,19 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="../paginas/index.html">Inicio</a>
+            <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../paginas/alimentos.html">Alimentos</a>
+            <a class="nav-link" href="alimentos.html">Alimentos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../paginas/acerca-de-nosotros.html">Acerca de nosotros</a>
+            <a class="nav-link" href="acerca-de-nosotros.html">Acerca de nosotros</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../paginas/contacto.html">Contacto</a>
+            <a class="nav-link" href="contacto.html">Contacto</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../paginas/carrito2.html">Carrito</a>
+            <a class="nav-link" href="carrito2.html">Carrito</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -51,10 +51,10 @@
             </a>
             <ul class="dropdown-menu">
               <li>
-                <a class="dropdown-item" href="../paginas/login.html">Iniciar sesión</a>
+                <a class="dropdown-item" href="login.html">Iniciar sesión</a>
               </li>
               <li>
-                <a class="dropdown-item" href="../paginas/registro.html">Registrarse</a>
+                <a class="dropdown-item" href="registro.html">Registrarse</a>
               </li>
             </ul>
           </li>
@@ -62,41 +62,62 @@
       </div>
     </div>
   </nav>
-  <br><br><br>
   <!-- Seccion principal -->
-  <main class="principal">
-    <div class="container1 mt-5">
-      <div class="container-main-registro borde-imgen-logo row p-3">
-        <div class="container-principal-registro col-lg-6 col-md-12 m-3">
-          <form class="form-registro justify-content-center align-items-center p-3">
-            <h2 class="text-h2 text-center fw-bold mb-3">REGISTRO DE USUARIO</h2>
-            <div class="col flex-column mb-3">
-              <label for="txtusuario" class="form-label fw-bold">Nombre y Apellido</label>
-              <input type="text" class="form-control shadow p-2 mb-2 bg-body-tertiary rounded" id="txtusuario"
-                placeholder="" />
-            </div>
+  <!-- para no olvidar -->
 
-            <div class="col flex-column mb-3">
-              <label for="txtusuario" class="form-label fw-bold">Usuario</label>
-              <input type="text" class="form-control shadow p-2 mb-2 bg-body-tertiary rounded" id="txtusuario"
-                placeholder="" />
-            </div>
-            <div class="col flex-column mb-3">
-              <label for="txtpassword" class="form-label fw-bold">Contraseña</label>
-              <input type="password" class="form-control shadow p-2 mb-2 bg-body-tertiary rounded" id="txtpassword"
-                placeholder="" />
-            </div>
-            <div class="col-12 flex-column mb-3">
-              <!--para que le boton se extienda -->
-              <a class="btn btn-primary btn-color fw-bold mt-3 w-100" href="" role="button">Registrar</a>
-            </div>
-          </form>
-        </div>
+  <main>
+    <h1 class="titulo">ALIMENTOS - VENTA SOLO EN EL LOCAL</h1>
+    <div class="contenedor">
+      <div class="libro-galeria">
+        <img src="../img/royal-canin.jpg" style="max-width: 48%" />
+        <a class="link1" href="descripcion-imagen-royalcanin.html">
+          <p>ROYAL CANIN</p>
+        </a>
+      </div>
+      <div class="libro-galeria">
+        <img src="../img/royal-canin-regular-fit.jpg" style="max-width: 50%" />
+        <a class="link1" href="descripcion-imagen-royalregularfit.html">
+          <p>ROYAL CANIN - REGULAR FIT </p>
+        </a>
+      </div>
+      <div class="libro-galeria">
+        <img src="../img/purina-proplan.jpg" style="max-width: 50%" />
+        <a class="link1" href="descripcion-imagen-purinaproplan.html">
+          <p>PURINA PRO PLAN</p>
+        </a>
+      </div>
+      <div class="libro-galeria">
+        <img src="../img/balanced.jpg" style="max-width: 50%" />
+        <a class="link1" href="descripcion-imagen-balanced.html">
+          <p>BALANCED SENIOR CAT</p>
+        </a>
+      </div>
+      <div class="libro-galeria">
+        <img src="../img/EUKANUBA.jpg" style="max-width: 50%" />
+        <a class="link1" href="descripcion-imagen-eukanuba.html">
+          <p>EUKANUBA</p>
+        </a>
+      </div>
+      <div class="libro-galeria">
+        <img src="../img/excellent.jpg" style="max-width: 50%" />
+        <a class="link1" href="descripcion-imagen-excellent.html">
+          <p>EXCELLENT</p>
+        </a>
+      </div>
+      <div class="libro-galeria">
+        <img src="../img/oldprince.jpg" style="max-width: 50%" />
+        <a class="link1" href="descripcion-imagen-oldprince.html">
+          <p>OLD PRINCE</p>
+        </a>
+      </div>
+      <div class="libro-galeria">
+        <img src="../img/infinity.jpg" style="max-width: 50%" />
+        <a class="link1" href="descripcion-imagen-infinity.html">
+          <p>INFINITY</p>
+        </a>
       </div>
     </div>
-    </div>
   </main>
-
   <!-- Seccion footer -->
   <footer>
     <div class="footer-grid">
