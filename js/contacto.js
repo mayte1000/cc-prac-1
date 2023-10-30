@@ -22,5 +22,5 @@ function validarForm() {
 
 
 function sendEmail() {
-    
-  }
+    alert('¡Muchas Gracias por enviar su consulta!');
+}
